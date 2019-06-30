@@ -17,6 +17,8 @@
         </widget>
 
         <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/hd/default/images/key_red.png" position="345,686" size="6,28" zPosition="1" />
+		
+		<widget name="description" position="357,20" size="902,140" font="jediregular;20" foregroundColor="#ffffff" backgroundColor="#000000" halign="left" valign="top" transparent="1" />
 
 	<widget source="key_red" render="Label" position="357,686" size="150,28" font="jediregular;20" valign="center" transparent="1" noWrap="1" foregroundColor="#ffffff" backgroundColor="#000000" halign="left" zPosition="1" />
         <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/hd/default/images/key_ok.png" position="1234,687" size="25,25" alphatest="blend" />

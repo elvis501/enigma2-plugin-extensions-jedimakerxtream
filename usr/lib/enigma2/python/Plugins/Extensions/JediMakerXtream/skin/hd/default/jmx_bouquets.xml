@@ -29,14 +29,13 @@
 	<widget source="key_blue" render="Label" position="843,686" size="150,28" font="jediregular;20" valign="center" transparent="1" noWrap="1" foregroundColor="#ffffff" backgroundColor="#000000" halign="left" zPosition="1" />
 
 	<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/hd/default/images/key_info.png" position="1054,686" size="25,25" alphatest="blend" zPosition="1" />
-	<widget source="key_info" render="Label" position="1084,686" size="90,25" font="jediregular;20" foregroundColor="#ffffff" backgroundColor="#000000" valign="center" transparent="1" zPosition="2" />
+	<widget source="key_info" render="Label" position="1084,686" size="180,25" font="jediregular;20" foregroundColor="#ffffff" backgroundColor="#000000" valign="center" transparent="1" zPosition="2" />
+	
+        <widget name="description" position="358,20" size="907,140" font="jediregular;20" foregroundColor="#ffffff" backgroundColor="#000000" halign="left" valign="top" transparent="1" />
 
         <widget name="list" textOffset="12,0" position="346,206" size="914,448" font="jediregular;24"  foregroundColor="#ffffff" backgroundColor="#000000"
         foregroundColorSelected="#ffffff" backgroundColorSelected="#000000" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/hd/default/images/select-1372-56.png"
         itemHeight="37" backgroundPixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/hd/default/images/blank.png"
-         scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
-         
- 	
-
+        scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
   </screen>
 

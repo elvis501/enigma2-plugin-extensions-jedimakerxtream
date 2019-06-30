@@ -2,19 +2,19 @@
 
 [
 
-["3e", "3e ireland"],
+["3e", "3e ireland", "virgin two", "virgin media two", "virgin media 2", "vm 2"],
 
-["3e hd"],
+["3e hd", "virgin two hd", "virgin media two hd", "virgin media 2 hd", "vm 2 hd"],
 
-["4music", "4 music", "four music"],
+["4music", "4 music", "four music", "4 music hd"],
 
-["4seven", "4 seven", "four seven", "4 seven hd"],
+["4seven", "4 seven", "four seven", "4 seven hd", "4seven hd"],
 
-["5 usa", "5usa", "five usa"],
+["5 usa", "5usa", "five usa", "5usa hd"],
 
-["5 usa +1", "5usa+1", "five usa +1"],
+["5 usa +1", "5usa+1", "five usa +1", "5 usa 1"],
 
-["5*", "5star", "5 star", "five star"],
+["5*", "5star", "5 star", "five star", "5star hd", "channel 5 star"],
 
 ["5* +1", "5star+1", "5 star +1", "five star+1", "5 star 1"],
 
@@ -25,6 +25,8 @@
 ["aaj tak"],
 
 ["aastha tv internation", "aastha tv", "aastha"],
+
+["abn tv"],
 
 ["abp news"],
 
@@ -38,7 +40,11 @@
 
 ["akaal channel", "akaal"],
 
-["al jazeera eng", "al jazeera", "aljazeera", "al jazeera eng hd", "al jazeera hd", "aljazeera hd", "al jazeera news", "al jazeera news hd"],
+["AIT Int'l"],
+
+["al jazeera eng hd", "al jazeera eng hd", "al jazeera hd", "aljazeera hd", "al jazeera news hd"],
+
+["al jazeera eng", "al jazeera", "aljazeera", "al jazeera news"],
 
 ["alibi"],
 
@@ -46,9 +52,7 @@
 
 ["alibi hd"],
 
-["amc"],
-
-["amc from bthd", "amc hd", "amc from bt"],
+["amc from bthd", "amc hd", "amc from bt", "amc"],
 
 ["animal plnt+1", "animal plnt +1", "animal plnt plus 1", "animal planet+1", "animal planet +1", "animal planet plus 1", "animal planet 1"],
 
@@ -64,13 +68,13 @@
 
 ["atn bangla uk", "atn"],
 
-["attv" , "at tv", "&tv", "& tv", "andtv", "and tv"],
+["attv" , "at tv", "&tv", "& tv", "andtv", "and tv", "and tv hd"],
 
 ["b4u movies"],
 
 ["b4u music"],
 
-["babytv", "baby tv"],
+["babytv", "baby tv", "baby tv hd"],
 
 ["bangla tv", "bangla"],
 
@@ -82,7 +86,7 @@
 
 ["bbc 1 east (w)", "bbc one east w", "bbc 1 east w"],
 
-["bbc 1 london", "bbc one lon", "bbc1 london", "bbc one london", "bbc1", "bbc 1", "bbc one"],
+["bbc 1 london", "bbc one lon", "bbc1 london", "bbc one london", "bbc1", "bbc 1", "bbc one", "bbcone"],
 
 ["bbc 1 n west", "bbc one n west", "bbc1 north west", "bbc one north west", "bbc 1 north west"],
 
@@ -98,9 +102,9 @@
 
 ["bbc 1 s west", "bbc one s west", "bbc one south west", "bbc1 south west", "bbc1 s west"],
 
-["bbc 1 scotland", "bbc one scot", "bbc one scotland", "bbc1 scotland"],
-
 ["bbc 1 scot hd", "bbc one scot hd", "bbc one scotland hd", "bbc1 scotland hd"],
+
+["bbc 1 scotland", "bbc one scot", "bbc one scotland", "bbc1 scotland"],
 
 ["bbc 1 south", "bbc one south", "bbc1 south"],
 
@@ -116,8 +120,6 @@
 
 ["bbc 1 yrks&lin", "bbc one yk&li", "bbc1 yk&li", "bbc one yorks and lincs", "bbc one east yorkshire", "bbc1 yrks&lin"],
 
-["bbc one hd", "bbc 1 hd", "bbc1 hd"],
-
 ["bbc 2 england", "bbc two", "bbc2", "bbc 2", "bbc two england"],
 
 ["bbc 2 ni", "bbc two ni", "bbc two northern ireland", "bbc2 ni", "bbc2 northern ireland", "bbc two northen ireland"],
@@ -126,7 +128,7 @@
 
 ["bbc 2 wales", "bbc two wales", "bbc2 wales"],
 
-["bbc alba"],
+["bbc alba", "bbc alba hd"],
 
 ["bbc four", "bbc4", "bbc 4"],
 
@@ -136,6 +138,8 @@
 
 ["bbc news hd"],
 
+["bbc one hd", "bbc 1 hd", "bbc1 hd"],
+
 ["bbc parl'mnt", "bbc parliament"],
 
 ["bbc red button", "bbc rb"],
@@ -144,15 +148,19 @@
 
 ["bbc two hd", "bbc2 hd", "bbc 2 hd"],
 
+["bbc scotland"],
+
+["bbc two hd"],
+
 ["believe tv", "believe"],
 
 ["ben"],
 
 ["best direct"],
 
-["bet:blackenttv", "bet star", "bet"],
+["bet:blackenttv", "bet star", "bet", "bet hd"],
 
-["blaze"],
+["blaze", "blaze hd"],
 
 ["bloomberg"],
 
@@ -164,27 +172,27 @@
 
 ["boomerang hd"],
 
-["box hits"],
+["box hits", "box hits hd"],
 
-["box nation", "boxnation", "boxnation hd", "sky box nation"],
+["box nation", "boxnation", "boxnation hd", "sky box nation", "box nation hd"],
 
 ["box upfront"],
 
 ["brit asia tv", "brit asia", "britasia"],
 
-["british muslim"],
+["british muslim", "brit muslim"],
 
 ["bt sport 1", "bt sports 1"],
 
-["bt sport 1 hd", "bt sports 1 hd"],
+["bt sport 1 hd", "bt sports 1 hd", "bt sport1hd", "bt sport 1hd", "bt hd 1"],
 
 ["bt sport 2", "bt sports 2"],
 
-["bt sport 2 hd", "bt sports 2 hd"],
+["bt sport 2 hd", "bt sports 2 hd", "bt sport2hd", "bt sport 2hd", "bt sports 2hd", "bt hd 2"],
 
 ["bt sport 3", "bt sports 3"],
 
-["bt sport 3 hd", "bt sports 3 hd"],
+["bt sport 3 hd", "bt sports 3 hd", "bt hd 3"],
 
 ["bt sport box office", "bt sports box office", "btsptboxoffhd", "bt sport box office hd"],
 
@@ -206,7 +214,7 @@
 
 ["bt sport//espn", "bt sport espn", "bt sports espn", "espn"],
 
-["btspt//espnhd", "bt sport espn hd", "bt sports espn hd"],
+["btspt//espnhd", "bt sport espn hd", "bt sports espn hd", "bt espn hd"],
 
 ["capitaltv.uk", "capital tv uk", "capital tv", "capital tv hd"],
 
@@ -214,13 +222,13 @@
 
 ["cartoon netwrk"],
 
-["cartoonito", "cartonito"],
+["cartoonito", "cartonito", "cartoonito hd"],
 
 ["cbbc channel", "cbbc", "bbc 3 cbbc", "bbc 3", "bbc cbbc", "bbc three"],
 
 ["cbbc channel hd", "cbbc hd", "bbc 3 cbbc hd", "bbc 3 hd", "bbc cbbc hd", "bbc three hd", "cbbc three"],
 
-["cbeebies"],
+["cbeebies", "bbc three/cbbc", "bbc three"],
 
 ["cbeebies hd"],
 
@@ -232,19 +240,31 @@
 
 ["cbs reality+1", "cbs reality +1", "cbs reality plus 1"],
 
-["challenge"],
+["challenge", "challenge tv", "challenge hd"],
 
 ["challenge+1", "challenge +1", "challenge plus 1", "challenge 1", "challenge +1 hd"],
 
 ["channel 4", "channel4", "ch4", "channel four"],
 
-["channel 4 +1", "channel 4+1", "channel 4 plus 1", "channel four +1", "channel four plus 1", "channel 4 +1 london"],
+["channel 4 +1", "channel 4+1", "channel 4 plus 1", "channel four +1", "channel four plus 1"],
 
 ["channel 4 +1 ireland"],
 
+["channel 4 +1 london"],
+
+["channel 4 +1 north"],
+
+["channel 4 +1 scotland"],
+
+["channel 4 +1 south & east"],
+
 ["channel 4 hd", "channel4 hd", "ch4 hd", "channel four hd"],
 
+["channel 4 ireland"],
+
 ["channel 4 irish"],
+
+["channel 4 ni"],
 
 ["channel 5", "channel five", "five"],
 
@@ -252,13 +272,13 @@
 
 ["channel 5+1", "channel 5 +1", "channel five +1", "channel five plus 1", "channel 5 plus 1"],
 
-["channel aka", "aka"],
+["channel aka", "aka", "total country"],
 
 ["channel s tv", "s tv", "s"],
 
 ["channels 24", "channel 24"],
 
-["chartshow tv", "chartshow", "chart show"],
+["chartshow tv", "chartshow", "chart show", "christmas hits", "chart show tv", "chart show hits"],
 
 ["cheannel 44", "channel 44"],
 
@@ -266,7 +286,7 @@
 
 ["chilled tv", "chilled"],
 
-["citv"],
+["citv", "c itv hd"],
 
 ["cltv"],
 
@@ -290,7 +310,7 @@
 
 ["comedyxtra", "comedy xtra", "comedy central extra", "comedy extra", "comedy central extra hd", "comedy central xtra"],
 
-["comedyxtra+1", "comedy xtra +1", "comedy central extra +1", "comedy extra +1", "comedyxtra plus 1", "comedy central extra plus 1", "comedy extra plus 1", "comedy central xtra +1"],
+["comedyxtra+1", "comedy xtra +1", "comedy central extra +1", "comedy extra +1", "comedyxtra plus 1", "comedy central extra plus 1", "comedy extra plus 1", "comedy central xtra +1", "comedy central xtra +1 hd"],
 
 ["community"],
 
@@ -299,9 +319,10 @@
 ["create & craft", "create and craft"],
 
 ["crime+inv", "crime & investigation", "crime and investigation", "crime and inv", "ci", "crime & investigation ci", "crime investigation", "crime & investigiation", "crime investigiation", "crime investigation hd"], 
-["crime+inv", "crime+investigation +1", "crime & investigation hd", "crime+investigation hd"],
+["crime+inv", "crime+investigation +1", "crime & investigation hd", "crime+investigation hd", "crime&investigation", "crime+ investigation"],
 
 ["crime+inv +1", "crime+inv+1", "crime & investigation +1", "crime and investigation +1", "crime+inv plus 1", "crime & investigation plus 1", "crime and investigation plus 1", "ci plus 1", "crime investigation 1"],
+["crime+inv +1", "crime+ investigation +1"],
 
 ["cruise 1st tv", "cruise 1sr", "cruise first"],
 
@@ -317,15 +338,17 @@
 
 ["disc.sci+1", "discovery science +1", "disc.sci plus 1", "discovery science plus 1"],
 
-["discovery", "discovery hd", "discovery channel hd"],
+["discovery channel", "discovery channel hd", "discovery", "discovery hd"],
 
-["discovery channel"],
+["discovery channel +1", "discovery channel +1 hd"],
+
+["discovery channel ireland", "discovery channel ireland hd"],
 
 ["discovery history", "disc.history"],
 
-["discovery science", "disc.science", "discovery science hd"],
+["discovery science", "disc.science", "discovery science hd", "discovery sci"],
 
-["discovery shed", "disc.shed", "shed"],
+["discovery shed", "disc.shed", "shed", "discovery shed hd"],
 
 ["discovery turbo", "disc.turbo", "turbo", "discovery turbo hd"],
 
@@ -347,25 +370,25 @@
 
 ["disney xd", "xd"],
 
-["disney xd +1", "disney xd +1", "xd +1", "xd+1", "disney xd plus 1", "xd plus 1", "disney xd 1"],
+["disney xd +1", "disney xd +1", "xd +1", "xd+1", "disney xd plus 1", "xd plus 1", "disney xd 1", "disney xd +1 hd"],
 
 ["disney xd hd", "xd hd"],
 
-["dmax", "discovery dmax"],
+["dmax", "discovery dmax", "dmax uk", "dmnax hd"],
 
 ["dmax+1", "dmax +1", "dmax plus 1"],
 
-["drama", "true drama", "drama hd"],
+["drama", "true drama", "drama hd", "drama channel"],
 
 ["dunyanews.uk", "dunya news", "dunya"],
 
-["e!", "e! entertainment", "e entertainment", "e", "e! 1"],
+["e!", "e! entertainment", "e entertainment", "e", "e! 1", "entertainment", "e1"],
 
 ["e! hd", "e hd", "e! entertainment hd", "e entertainment hd", "e hd"],
 
 ["e4"],
 
-["e4 +1", "e4+1", "e4 plus 1"],
+["e4 +1", "e4+1", "e4 plus 1", "e4 1"],
 
 ["e4 +1 (ireland)"],
 
@@ -375,7 +398,7 @@
 
 ["eden+1", "eden +1", "eden plus 1"],
 
-["eir sport 1", "eir sport 1", "eir sport1", "eir sports 1", "sky eir 1", "eir sports1"],
+["eir sport 1", "eir sport 1", "eir sport1", "eir sports 1", "sky eir 1", "eir sports1", "eir sport 1 hd", "eir sports1"],
 
 ["eir sport 2", "eir sport 2", "eir sport2", "eir sports 2", "eir sports2"],
 
@@ -403,15 +426,15 @@
 
 ["film4", "film 4", "film four"],
 
-["film4 +1", "film4+1", "film 4 +1", "film 4 plus 1", "film four plus 1"],
+["film4 +1", "film4+1", "film 4 +1", "film 4 plus 1", "film four plus 1", "film 4 +1 hd"],
 
 ["film4 hd", "film 4 hd", "film four hd"],
 
 ["food network", "food network hd"],
 
-["food network+1", "food network+1", "food network +1", "food network plus", "food network 1"],
+["food network+1", "food network+1", "food network +1", "food network plus", "food network 1", "food netwrk"],
 
-["forces tv", "forces"],
+["forces tv", "forces", "forces tv hd"],
 
 ["fox", "fox hd"],
 
@@ -419,9 +442,11 @@
 
 ["france 24 (english)", "france 24", "france24", "france 24 english"],
 
-["freesports", "free sports", "free sport", "free-sport", "freesport"],
+["freesports", "free sports", "free sport", "free-sport", "freesport", "free sports tv"],
 
-["frontrunner 2", "frontrunner2", "front runner 2", "front runner"],
+["freesports Ireland"],
+
+["frontrunner 2", "frontrunner2", "front runner 2", "front runner", "front runner tv"],
 
 ["gems tv", "gems", "gemstv"],
 
@@ -465,11 +490,13 @@
 
 ["high street tv 3",  "highstreet tv 3"],
 
-["hillsong"],
+["high street tv5",  "highstreet tv 5"],
+
+["hillsong", "hillsong channel"],
 
 ["history", "history channel", "history channel hd", "history hd"],
 
-["history +1 hour", "history+1", "history plus 1"],
+["history +1 hour", "history+1", "history plus 1", "history +1"],
 
 ["hochanda"],
 
@@ -477,7 +504,7 @@
 
 ["home"],
 
-["home & health", "h&h", "home and health", "h and h", "h & h", "discovery home & health", "home health", "discovery home health", "discovery home n health", "home & health", "home health"],
+["home & health", "h&h", "home and health", "h and h", "h & h", "discovery home & health", "uk discovery home & health", "home health", "discovery home health", "discovery home n health", "home & health", "home health", "home & health", "home&health", "discovery h&h"],
 
 ["home+1", "home +1", "home plus 1"],
 
@@ -487,7 +514,7 @@
 
 ["horror channel +1", "horror ch+1", "horror cn +1", "horror channel +1", "horror channel plus 1"],
 
-["horse & country", "hourse and country", "h&c"],
+["horse & country", "hourse and country", "h&c", "horse and country", "horse country"],
 
 ["hum masala"],
 
@@ -495,13 +522,13 @@
 
 ["hum-europe", "hum"],
 
-["id", "investigation discovery", "investigation discovery id", "i.d"],
+["id", "investigation discovery", "investigation discovery id", "i.d", "id channel", "i.d hd", "investigation disvovery hd"],
 
-["id+1", "id +1", "investigation discovery +1", "id plus 1", "investigation discovery plus 1"],
+["id+1", "id +1", "investigation discovery +1", "id plus 1", "investigation discovery plus 1", "i.d +1"],
 
 ["ideal world"],
 
-["ideal xmas", "ideal world"],
+["ideal xmas", "ideal world", "ideal extra"],
 
 ["ideal world", "ideal xmas"],
 
@@ -531,7 +558,7 @@
 
 ["itv 3", "itv3"],
 
-["itv 3 +1", "itv 3 plus 1", "itv3 +1", "itv3 plus 1", "itv3 1", "itv 3 1"],
+["itv 3 +1", "itv 3 plus 1", "itv3 +1", "itv3 plus 1", "itv3 1", "itv 3 1", "itv 3+1"],
 
 ["itv 3 hd", "itv3 hd"],
 
@@ -548,6 +575,10 @@
 ["itv be +1", "itv be plus 1", "itv be 1", "itvbe +1"],
 
 ["itv box off hd", "itv box off", "itv box office", "itv box office hd"],
+
+["itv encore"],
+
+["itv encore +1"],
 
 ["itv tyne tees +1", "itv tyne tees plus 1"],
 
@@ -569,7 +600,7 @@
 
 ["itv1 channel islands", "itv channel isles", "itv channel islands"],
 
-["itv1 granada", "itv 1 granada", "itv granada", "itv 1", "itv1"],
+["itv1 granada", "itv 1 granada", "itv granada", "itv 1", "itv1", "itv"],
 
 ["itv1 granada +1", "itv 1 granada +1", "itv granada +1", "itv1 +1", "itv 1 +1", "itv +1"],
 
@@ -615,13 +646,13 @@
 
 ["kiss", "kiss tv"],
 
-["kix"],
+["kix", "pop max"],
 
-["kix +1"],
+["kix +1", "pop max +1"],
 
 ["ktv"],
 
-["lfctv hd", "liverpool fc", "lfc tv", "lfc", "lfc hd", "lfctv", "liverpool fc tv", "lfc tv hd"],
+["lfctv hd", "liverpool fc", "lfc tv", "lfc", "lfc hd", "lfctv", "liverpool fc tv", "lfc tv hd", "liverpool tv", "lfc hd", "lfctv", "liverpool fc hd"],
 
 ["lifetime", "life time"],
 
@@ -659,13 +690,13 @@
 
 ["more4 hd", "more 4 hd", "more four hd"],
 
-["mov4men+1", "movies4man1", "movies4men +1", "movies4men+1", "movies 4 men"],
+["mov4men+1", "movies4man1", "movies4men +1", "movies4men+1", "movies 4 men", "movies 4 men +1"],
 
-["movies 24", "movies24", "24 movies", "christmas 24"],
+["movies 24", "movies24", "24 movies", "christmas 24", "christmas24"],
 
 ["movies24+", "christmas 24+", "movies24 plus", "movies 24+"],
 
-["movies4men", "movies4man", "movies 4 men", "movies4mens hd"],
+["movies4men", "movies4man", "movies 4 men", "movies4mens hd", "christmas24+"],
 
 ["mta-muslim tv", "mta muslim tv", "mta muslim"],
 
@@ -675,9 +706,9 @@
 
 ["mtv beats", "mtv beats hd"],
 
-["mtv classic", "mtv classic hd"],
+["mtv classic", "mtv classic hd", "mtv classics"],
 
-["mtv dance", "mtv dance hd"],
+["mtv dance", "mtv dance hd", "club mtv", "mtv club"],
 
 ["mtv hd", "mtv europe hd"],
 
@@ -691,11 +722,11 @@
 
 ["mtv+1", "mtv+1", "mtv +1", "mtv plus 1", "mtv 1"],
 
-["mutv hd", "manchester united fc", "mutv", "manchester united tv", "man united", "mu tv", "mu tv hd"],
+["mutv hd", "manchester united fc", "mutv", "manchester united tv", "man united", "mu tv", "mu tv hd", "mufc tv", "manchester united fc hd", "man united tv", "man united tv hd"],
 
 ["my channel", "mytv", "my tv"],
 
-["my5", "my 5"],
+["my5", "my 5", "5 select", "5select", "5 select hd"],
 
 ["nat geo", "national geographic channel", "nat geo", "national geographic", "national geographic nat geo"],
 
@@ -713,7 +744,7 @@
 
 ["nhk world hd", "nhk", "nhk world", "nhk world news hd"],
 
-["nick jr too", "nick jr peppa", "nick jr.peppa", "nick jnr too", "nick jr. peppa", "nick jr. too"],
+["nick jr too", "nick jr peppa", "nick jr.peppa", "nick jnr too", "nick jr. peppa", "nick jr. too", "nick junior too", "nickjr too", "nick jr 2", "nick jrr too"],
 
 ["nick jr+1", "nick jr 1", "nick jr +1", "nickoldeon jr. +1", "nickoldeon junior +1", "nick jr plus 1", "nick jr. +1"],
 
@@ -721,17 +752,17 @@
 
 ["nick jr. hd", "nick jr hd", "nickoldeon jr. hd", "nickoldeon junior hd", "nick jnr hd", "nick.jr hd"],
 
-["nickelodeon", "nick", "nickeloden", "nick europe", "nick tv hd"],
+["nickelodeon", "nick", "nickeloden", "nick europe", "nick tv hd", "nicklodean", "nicklodeon"],
 
-["nickelodeon+1", "nick+1", "nickelodeno+1", "nick +1", "nickelodeon +1", "nickelodeon 1"],
+["nickelodeon+1", "nick+1", "nickelodeno+1", "nick +1", "nickelodeon +1", "nickelodeon 1", "nicklodean +1"],
 
 ["nickelodeonhd", "nickelodeon hd", "nick hd", "nickeloden hd"],
 
-["nicktoons", "nick toons", "nicktoons hd"],
+["nicktoons", "nick toons", "nicktoons hd", "nick toons hd"],
 
 ["noor tv", "noortv", "noor"],
 
-["nowmusic", "now music", "now 80s", "now 90s"],
+["nowmusic", "now music", "now 80s", "now 90s", "now 80s/hd"],
 
 ["ntai", "n tai"],
 
@@ -739,11 +770,11 @@
 
 ["olive tv", "olivetv", "olive"],
 
-["paramount", "paramount pictures"],
+["paramount", "paramount pictures", "paramount network"],
 
 ["paversshoes.tv", "pavers shows tv", "paver shoes"],
 
-["pbs america", "pbs"],
+["pbs america", "pbs", "pbs america hd"],
 
 ["pcne chinese", "pcne"],
 
@@ -759,9 +790,9 @@
 
 ["pop +1" ,"pop plus 1"],
 
-["premier hd", "premier sports hd", "premier 1 hd", "premiere sports hd"],
+["premier hd", "premier 1", "premier sports hd", "premier 1 hd", "premiere sports hd", "premiere sport hd", "premiere sports 1 hd", "premier sports 1 hd", "premier sports 1"],
 
-["premier sports", "premier 1", "premier1", "premiere sport"],
+["premier sports", "premier 2", "premier2", "premiere sport 2", "premier sports 2"],
 
 ["price crash", "pricecrash"],
 
@@ -770,6 +801,8 @@
 ["propeller tv", "propeller"],
 
 ["property show"],
+
+["psychic today"],
 
 ["ptc punjabi", "ptc"],
 
@@ -783,17 +816,17 @@
 
 ["quest red +1", "quest red plus 1", "quest red+1"],
 
-["quest+1", "quest +1", "quest plus 1"],
+["quest+1", "quest +1", "quest plus 1", "quest 1"],
 
 ["qvc"],
 
-["qvc beauty"],
+["qvc beauty", "qvc beauty hd"],
 
 ["qvc extra", "qvc xmas"],
 
 ["qvc style"],
 
-["racing uk", "racinguk", "racing", "racing uk hd", "racinguk hd"],
+["racing uk", "racinguk", "racing", "racing uk hd", "racinguk hd", "racing hd"],
 
 ["real lives", "sky real lives"],
 
@@ -809,7 +842,7 @@
 
 ["revelation"],
 
-["rishtey", "rishtet tv"],
+["rishtey", "rishtey tv", "rishtey europe"],
 
 ["rishtey cineplex", "rishteycine", "rishtey cinema", "rishtey cine"],
 
@@ -821,15 +854,15 @@
 
 ["rt", "rt hd"],
 
-["rte jr", "rte 3 j.r", "rtéjr", "rte junior", "rt jr", "rt jr hd", "rte jr hd"],
+["rte jr", "rte 3 j.r", "rtéjr", "rte junior", "rt jr", "rt jr hd", "rte jr hd", "rta jr", "rtjr"],
 
-["rte news now", "rté news now", "rte news", "rt news now", "rte news now hd"],
+["rte news now", "rté news now", "rte news", "rt news now", "rte news now hd", "rt 1 news", "rta news now"],
 
-["rte one", "rté one", "rte 1", "rte1", "rte one hd", "rté one hd", "rte 1 hd", "rte1 hd", "rt one hd", "rt one", "rte one hd ie"],
+["rte one", "rté one", "rte 1", "rte1", "rte one hd", "rté one hd", "rte 1 hd", "rte1 hd", "rt one hd", "rt one", "rte one hd ie", "rta one", "rta one hd"],
 
 ["rte one +1", "rté one+1", "rte 1 +1", "rté one plus 1", "rte 1 plus 1"],
 
-["rte two", "rte 2", "rté2", "rte2", "rte 2", "rté two", "rte two hd", "rte 2 hd", "rté2 hd", "rte2 hd", "rte 2 hd", "rté two hd", "rt two hd", "rt two", "rte two hd ie"],
+["rte two", "rte 2", "rté2", "rte2", "rte 2", "rté two", "rte two hd", "rte 2 hd", "rté2 hd", "rte2 hd", "rte 2 hd", "rté two hd", "rt two hd", "rt two", "rte two hd ie", "rta two", "rta two hd"],
 
 ["russia today", "russia today documetary", "russia today news"],
 
@@ -845,19 +878,19 @@
 
 ["sanskar"],
 
-["scuzz"],
-
 ["sewing quarter"],
 
-["showcase"],
+["showcase", "skyshowcase"],
 
 ["sikh channel"],
 
 ["sky action", "sky movies action", "sky movies action adventure hd", "sky cinema action", "sky movies action hd", "sky cinema action hd", "sky action hd", "sky movies action & adventure hd", "sky cinema action & adventure hd", "sky cinema action & adventure"],
 
-["sky arts", "s3y arts", "sky arts 1", "sky arts hd", "uk sky arts", "sky arts 1 hd"],
+["sky arts", "s3y arts", "sky arts 1", "sky arts hd", "uk sky arts", "sky arts 1 hd", "sky art"],
 
 ["sky atlantic", "sky atlantic hd", "sky cinema atlantic", "atlantic", "sky cinema atlantic hd"],
+
+["sky atlantic +1", "sky atlantic 1"],
 
 ["sky comedy", "sky cinema comedy", "sky movies comedy"],
 
@@ -867,16 +900,16 @@
 
 ["sky disney hd", "sky cinema disney hd", "sky movies disney hd", "sky movie disney hd"],
 
-["sky drama", "sky movies drama"],
+["sky drama", "sky movies drama", "sky movies drama hd"],
 
 ["sky dramarom", "sky movies drama romance", "sky christmas", "sky cinema christmas", "sky movies christmas", "sky cinema drama", "sky cinema drama romance hd", "sky cinema christmas hd", "sky movies christmas hd"],
-["sky dramarom", "sky movies drama & romance", "sky cinema drama hd", "sky movies drama & romance hd"],
+["sky dramarom", "sky movies drama & romance", "sky cinema drama hd", "sky movies drama & romance hd", "sky cinema drama & romance", "sky cinema drama & romance hd"],
 
 ["sky family", "sky cinema family", "sky animation", "skyanimation", "sky movies family", "sky cinema animation", "sky movies animation"],
 
 ["sky family hd", "sky cinema family hd", "sky animation hd", "skyanimation hd", "sky movies family hd", "sky cinema animation hd", "sky movies animation hd", "sky movies animation"],
 
-["sky hits", "sky movies hits showcase hd", "sky cinema hits hd", "sky cinema hits", "sky movies hits", "sky movies hits hd"],
+["sky hits", "sky movies hits showcase hd", "sky cinema hits hd", "sky cinema hits", "sky movies hits", "sky movies hits hd", "sky hits hd"],
 
 ["sky living", "living", "sky living hd"],
 
@@ -884,19 +917,23 @@
 
 ["sky news"],
 
+["sky news arabia hd"],
+
 ["sky news hd"],
 
 ["sky one", "sky one hd"],
 
-["sky prem+1", "sky prem +1", "sky premiere +1", "sky prem plus 1", "sky premiere plus 1", "sky cinema premiere +1", "sky movies premiere +1 hd"],
+["sky prem+1", "sky prem +1", "sky premiere +1", "sky prem plus 1", "sky premiere plus 1", "sky cinema premiere +1", "sky movies premiere +1 hd", "sky cinema premier +1 hd", "sky cinema premiere 1"],
 
 ["sky premiere", "cinema premiere", "sky movies premiere","sky cinema premiere", "sky movies premier", "sky cinema premier", "sky movie premier"],
 
 ["sky scfi/horhd", "sky movies scifi horror hd", "sky scfi/horror hd", "sky scfi hd", "sky horror hd", "sky movies scfi horror hd", "sky cinema scifi hd","sky movies scifi & horror hd", "sky cinema sci-fi & horror hd"],
-["sky scfi/horhd", "sky movies sci-fi & horror hd", "sky cinema sci-fi horror hd", "sky cinema sci-fi & horror hd", "sky movie sci-fi hd", "sky cinema scifi horror hd"],
+["sky scfi/horhd", "sky movies sci-fi & horror hd", "sky cinema sci-fi horror hd", "sky cinema sci-fi & horror hd", "sky movie sci-fi hd", "sky cinema scifi horror hd", "sky cinema scifi and horror hd"],
+["sky scfi/horhd", "sky cinema sci fi Hor hd", "sky cinema scifi&horror hd"],
 
 ["sky scfi/horror", "sky scfi", "sky horror", "sky movies scfi horror", "sky cinema scifi", "sky movies scifi & horror", "sky cinema sci-fi & horror", "sky movies sci-fi & horror", "sky cinema sci-fi horror"], 
-["sky scfi/horror", "sky cinema sci-fi & horror", "sky movie sci-fi", "sky movie scifi",  "sky cinema scifi & horror", "sky movies scifi horror"],
+["sky scfi/horror", "sky cinema sci-fi & horror", "sky movie sci-fi", "sky movie scifi",  "sky cinema scifi & horror", "sky movies scifi horror", "sky cinema sci fi", "sky cinema skyfi" ,"sky cinema scifi horror"],
+["sky scfi/horror", "sky cinema scifi and horror"],
 
 ["sky select", "sky movies select", "skyselect", "sky cinema select"],
 
@@ -906,9 +943,9 @@
 
 ["sky the open"],
 
-["sky thriller", "sky cinema crime & thriller", "sky cinema thriller", "sky movies thriller", "sky cinema crime & thriller"],
+["sky thriller", "sky cinema crime & thriller", "sky cinema thriller", "sky movies thriller", "sky cinema crime & thriller", "sky crime thriller"],
 
-["sky thriller hd", "sky movies crime thriller hd", "sky cinema thriller hd", "sky movies thriller hd", "sky cinema crime & thriller hd", "sky cinema crime thriller hd", "sky movies crime &thriller hd"],
+["sky thriller hd", "sky movies crime thriller hd", "sky cinema thriller hd", "sky movies thriller hd", "sky cinema crime & thriller hd", "sky cinema crime thriller hd", "sky movies crime & thriller hd"],
 
 ["sky witness", "sky witness hd"],
 
@@ -918,81 +955,87 @@
 
 ["sky2", "sky two", "sky two hd", "sky 2", "sky2 hd", "sky 2 hd"],
 
-["skypremierehd", "sky movies premier hd", "cinema premiere hd", "sky movies premiere hd","sky cinema premiere hd", "sky movies premier hd", "sky cinema premier hd", "sky movie premier hd"],
+["skypremierehd", "sky movies premier hd", "cinema premiere hd", "sky movies premiere hd","sky cinema premiere hd", "sky movies premier hd", "sky cinema premier hd", "sky movie premier hd", "sky premier hd"],
 
 ["skysp action", "sky sport 3", "sky sports 3", "sky sports action"],
 
-["skysp actionhd", "sky sport 3 hd", "sky sports 3 hd", "sky sports action hd", "sky sport action hd"],
+["skysp actionhd", "sky sport 3 hd", "sky sports 3 hd", "sky sports action hd", "sky sport action hd", "sky sports hd action", "sky sports 3 action hd"],
 
 ["skysp arena", "sky sports arena", "sky sports darts"],
 
-["skysp arenahd", "sky sports arena hd", "sky sport arena hd", "sky sports darts hd"],
+["skysp arenahd", "sky sports arena hd", "sky sport arena hd", "sky sports darts hd", "sky sports hd arena"],
 
 ["skysp cricket", "sky sports cricket"],
 
 ["skysp f'ball", "sky sports football"],
 
-["skysp f'ball hd", "sky sports football hd", "sky sport football hd"],
+["skysp f'ball hd", "sky sports football hd", "sky sport football hd", "sky sports hd football", "sky sports 5 football hd"],
 
 ["skysp f1", "sky sports f1"],
 
-["skysp f1 hd", "sky sport f1 hd", "sky sports f1 hd"],
+["skysp f1 hd", "sky sport f1 hd", "sky sports f1 hd", "sky sport f1 hd"],
 
 ["skysp golf", "sky sport 4", "sky sports 4", "sky sports golf"],
 
-["skysp golf hd", "sky sports 4 hd", "sky sports 4 hd", "sky sports golf hd"],
+["skysp golf hd", "sky sports 4 hd", "sky sports 4 hd", "sky sports golf hd", "sky sports hd golf", "sky sports 4 golf hd"],
 
 ["skysp main event", "sky sports main event"],
 
 ["skysp mix", "sky sports mix hd", "sky sports mix", "sky sport mix hd", "sky sport mix"],
 
-["skysp news", "sky sports news"],
+["skysp news", "sky sports news", "sky sport news"],
 
 ["skysp news hd", "sky sport news hd", "sky sports news hd", "sky sports news hq"],
 
-["skysp pl hd", "sky sport 5 hd", "sky sports 5 hd", "sky sports premier league hd", "sky sport 5", "sky sports 5", "sky sports premier league"],
+["skysp pl"],
+
+["skysp pl hd", "sky sport 5 hd", "sky sports 5 hd", "sky sports premier league hd", "sky sport 5", "sky sports 5", "sky sports premier league", "sky sports hd premier league", "sky sports pl hd", "sky sports premiere league hd"],
+
+["skysp racing", "sky sports racing", "sky sports racing hd", "sp uk racing n"],
 
 ["skyspboxoff", "sky box office", "sky box office hd",  "sky sports box office", "sky sports box office hd", "sky box office sport hd"],
 
 ["skyspcricket", "sky sport 2", "sky sports 2", "sky sports cricket"],
 
-["skyspcrickethd", "sky sport 2 hd", "sky sports 2 hd", "sky sports cricket hd"],
+["skyspcrickethd", "sky sport 2 hd", "sky sports 2 hd", "sky sports cricket hd", "sky sport cricket hd", "sky sports hd cricket", "sky sports 2 cricket hd"],
 
 ["skyspmainev", "sky sport 1", "sky sports 1", "sky sports main event"],
 
-["skyspmainevhd", "sky sport 1 hd", "sky sports 1 hd", "sky sports main event hd"],
+["skyspmainevhd", "sky sport 1 hd", "sky sports 1 hd", "sky sports main event hd", "sky sports hd main event", "sky sports 1 main event hd"],
 
 ["skytheopenhd", "sky sports the open hd", "sky sports the open"],
 
-["skytomhanks", "sky movies greats", "sky cinema greats", "sky greats", "sky movies modern greats"], 
+["skytomhanks", "sky movies greats", "sky cinema greats", "sky greats", "sky movies modern greats", "sky superhero"], 
+
+["smithsonian channel"],
 
 ["sonlife", "son life"],
 
-["sony crime channel", "sony crime channel"],
+["sony crime channel", "sony crime channel", "sony crime"],
 
 ["sony crime channel +1", "sony crime+1", "sony crime +1", "sony crime plus 1"],
 
-["sony max", "set max"],
+["sony max", "set max", "sony set max tv", "sony set max"],
 
 ["sony max hd", "set max hd"],
 
 ["sony mix"],
 
-["sony movies", "sony movie", "sony movie channel",  "sony movie channel hd"],
+["sony movies", "sony movie", "sony movie channel",  "sony movie channel hd", "sony movies channel"],
 
 ["sony movies+1",  "sony movies +1", "sony movies plus 1", "sony chnl 1"],
 
 ["sony sab"],
 
-["sony tv", "sony tv hd"],
+["sony tv", "sony tv hd", "sony tv uk", "sony ent", "sony entertainment"],
 
-["spike", "5spike", "5 spike"],
+["spike", "5spike", "5 spike", "5 spike hd"],
 
 ["spike +1", "spike plus 1", "5spike +1"],
 
 ["sports active", "sky sports active"],
 
-["star bharat", "star life ok"],
+["star bharat", "star life ok", "life ok"],
 
 ["star gold", "star gold hd"],
 
@@ -1016,15 +1059,13 @@
 
 ["stv2", "stv 2", "stv two"],
 
-["syfy"],
+["syfy", "syfy hd"],
 
 ["syfy +1", "syfy plus 1", "syfy 1"],
 
-["syfy hd"],
-
 ["takbeer tv", "takbeer"],
 
-["talking pictures", "talking pictures"],
+["talking pictures", "talking pictures tv"],
 
 ["tbn uk", "tbn"],
 
@@ -1032,7 +1073,7 @@
 
 ["tcm hd", "turner classic movies tcm hd", "turner classic movies hd", "tcm hd english lang"],
 
-["tcm uk +1", "tcm +1", "tcm plus 1", "tcm+1"],
+["tcm uk +1", "tcm +1", "tcm plus 1", "tcm+1", "tcm 1"],
 
 ["television x", "televisionx"],
 
@@ -1041,6 +1082,8 @@
 ["thane direct", "thane"],
 
 ["the box", "thebox"],
+
+["the vault"],
 
 ["the word network", "word network", "word"],
 
@@ -1056,7 +1099,7 @@
 
 ["tlc+1", "tlc+1", "tlc +1", "tlc plus 1", "tlc 1"],
 
-["tomhankshd", "sky cinema greats hd", "sky movies greats hd", "sky greats hd", "sky movies superheroes hd"],
+["tomhankshd", "sky cinema greats hd", "sky movies greats hd", "sky greats hd", "sky movies superheroes hd", "sky superhero hd", "sky cinema modern great hd", "sky cinema modern greats hd"],
 
 ["travel channel", "travel", "travel channel hd"],
 
@@ -1068,17 +1111,17 @@
 
 ["trtworld"],
 
-["tru tv", "trutv"],
+["true crime", "tru tv", "trutv"],
 
-["tru tv +1", "trutv +1", "tru tv+1", "tru +1"],
+["true crime +1", "tru tv +1", "trutv +1", "tru tv+1", "tru +1"],
 
 ["true ent", "true entertainment", "true movies 2"],
 
 ["true ent+1", "tru entertainment +1", "true ent plus 1", "true entertainment plus 1", "tru ent +1"],
 
-["true movies 1", "true movies", "true christmas", "true movies", "true christmas movies"],
+["true movies 1", "true movies", "true christmas", "true movies", "true christmas movies", "true movies 1 hd"],
 
-["true movies 2", "truechrstms+1", "true christmas +1", "true movies +1", "true christmas plus 1", "true movies plus 1", "true christmas movies"],
+["true movies 2", "truechrstms+1", "true christmas +1", "true movies +1", "true christmas plus 1", "true movies plus 1", "true christmas movies", "true movies 2 hd"],
 
 ["tv 99", "tv99"],
 
@@ -1086,11 +1129,13 @@
 
 ["tv warehouse", "warehouse"],
 
-["tv3", "tv 3"],
+["tv3", "tv 3", "virgin one", "virgin media one", "virgin media 1", "vm 1"],
 
-["tv3 +1", "tv3+1", "tv3 plus 1"],
+["tv3 +1", "tv3+1", "tv3 plus 1", "virgin one +1", "virgin media one +1", "virgin media 1 +1", "vm 1 +1"],
 
-["tv3 hd"],
+["tv3 hd", "virgin one hd", "virgin media one hd", "virgin media 1 hd", "vm 1 hd"],
+
+["tv5 monde europe"],
 
 ["tvc news"],
 
@@ -1098,43 +1143,45 @@
 
 ["universal hd", "universal channel hd"],
 
-["universal+1", "universal +1", "universal channel +1", "universal channel plus 1", "universal 1"],
+["universal+1", "universal +1", "universal channel +1", "universal channel plus 1", "universal 1", "universal channel 1"],
 
 ["utv ireland", "utv", "utv ie"],
 
 ["utv ireland hd", "utv hd"],
 
+["utv+1 ireland"],
+
 ["v channel", "v"],
 
 ["venus tv", "venus"],
 
-["vh1", "vh1 classic"],
+["vh1", "vh1 classic", "vh1 hd", "vh 1 classic"],
 
-["viceland", "vice land", "vice", "viceland hd"],
+["viceland", "vice land", "vice", "viceland hd", "vice hd"],
 
-["virgin media three", "virgin three", "virgin 3"],
+["virgin media three", "virgin three", "virgin 3", "vm 3"],
 
-["viva"],
+["viva", "mtv omg", "mtv 90's", "viva hd"],
 
-["vox africa"],
+["vox africa", "vox"],
 
-["w", "watch"],
+["w", "watch",  "w ireland"],
 
-["w +1", "w+1", "watch +1", "w plus 1", "watch plus 1", "w ireland"],
+["w +1", "w+1", "watch +1", "w plus 1", "watch plus 1", "w 1"],
 
 ["w hd", "watch hd"],
 
 ["yanga!", "yanga"],
 
-["yesterday"],
+["yesterday", "yesterday hd"],
 
 ["yesterday+1", "yesterday +1", "yesterday"],
 
 ["your tv", "yourtv"],
 
-["zee cinema", "z cinema"],
+["zee cinema", "z cinema", "zee cinema uk"],
 
-["zee tv", "z tv", "zee tv hd"],
+["zee tv", "z tv", "zee tv hd", "zee tv uk"],
 
 ["zing"]
 

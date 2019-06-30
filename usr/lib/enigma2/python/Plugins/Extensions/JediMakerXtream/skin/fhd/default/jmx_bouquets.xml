@@ -1,5 +1,6 @@
 
 <screen name="jmxBouquets" position="0,0" size="1920,1080" backgroundColor="#ff000000" flags="wfNoBorder">
+
         <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/fhd/default/images/background.png" position="0,0" size="1920,1080" zPosition="-2" />
         <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/fhd/default/images/vertical-saber.png"   alphatest="blend" position="479,0"  size="10,1080" zPosition="2" />
         <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/JediMakerXtream/skin/fhd/default/images/horizontal-saber.png" alphatest="blend" position="0,269"  size="1920,10" zPosition="2" />
