@@ -1,4 +1,5 @@
 firstrun = 0
+playlist_exists = False
 
 current_selection = 0
 current_playlist = []
@@ -57,9 +58,12 @@ series = False
 has_epg_importer = False
 epg_provider = False
 if has_epg_importer:
-    epg_provider = True
-    
-prefix_name = True    
+	epg_provider = True
+	
+prefix_name = True  
+
+livebuffer = "0"
+vodbuffer = "0" 
 
 # catchup globals
 
@@ -73,7 +77,9 @@ password = ""
 domain = ""
 refstreamnum = ""
 
+rytecnames = []
 
+fixepg = False
 
 
 

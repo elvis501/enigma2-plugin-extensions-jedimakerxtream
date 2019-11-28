@@ -1,10 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# for localized messages  	 
+from . import _
+
 from Components.ActionMap import ActionMap
 from Components.ConfigList import *
 from Components.Label import Label
-from Components.MenuList import MenuList
+
+from Components.Sources.List import List
 from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixmapAlphaBlend
 from Components.Sources.StaticText import StaticText
 from enigma import eConsoleAppContainer, eListboxPythonMultiContent, eTimer, eEPGCache, eServiceReference, getDesktop, gFont, loadPic, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_WRAP, addFont, iServiceInformation, iPlayableService
@@ -13,7 +17,7 @@ from Screens.Screen import Screen
 from Components.config import *
 
 from Tools.LoadPixmap import LoadPixmap
-from plugin import skin_path, cfg, playlist_path, playlist_file, hdr
+from plugin import skin_path, cfg, playlist_path, playlist_file, hdr, screenwidth
 import re
 import json
 import urllib2
@@ -59,7 +63,7 @@ def downloadSimpleData():
         
         match2 = False
         if re.search('(https|http):\/\/[^\/]+\/[^\/]+\/[^\/]+\/\d+(\.m3u8|\.ts|$)', refurl) is not None:
-            match1 = True
+            match2 = True
                 
         if match1:
             jglob.username = re.search('[^\/]+(?=\/[^\/]+\/\d+\.)', refurl).group()
@@ -81,11 +85,15 @@ def downloadSimpleData():
             response = urllib2.urlopen(req)
         
         except urllib2.URLError as e:
-            print e
+            print(e)
             pass
             
         except socket.timeout as e:
-            print e
+            print(e)
+            pass
+            
+        except:
+            print("\n ***** downloadSimpleData unknown error")
             pass
         
         if response != "":
@@ -121,15 +129,16 @@ def downloadSimpleData():
                         jglob.dates.append(start)
                         
                 dates_count = len(jglob.dates)
-                jglob.dates.append(["All %s days" % dates_count, "0000-00-00"])
+                
+                jglob.dates.append([(_("All %s days")) % dates_count, "0000-00-00"])
     
                 return error_message, True
     
             else:
-                error_message = "Channel has no TV Archive."
+                error_message = _("Channel has no TV Archive.")
                 return error_message, False 
         else:
-            error_message = "Error: Downloading data error."
+            error_message = _("Error: Downloading data error.")
             return error_message, False
 
 
@@ -137,12 +146,41 @@ def downloadSimpleData():
 class JediMakerXtream_Catchup(Screen):
     
     def __init__(self, session):
-
+        
+       
         skin = """
             <screen name="JediCatchup" position="center,center" size="600,600" >
-                <widget name="list" textOffset="15,0" position="0,0" size="1140,504" font="Regular;36"  itemHeight="54" enableWrapAround="1"  scrollbarMode="showOnDemand"  transparent="1" />
+
+                <widget source="newlist" render="Listbox" position="0,0" size="600,504" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1">
+                    <convert type="TemplatedMultiContent">
+                        {"template": [
+                            MultiContentEntryText(pos = (15, 0), size = (570, 45), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+                        ],
+                    "fonts": [gFont("jediregular", 36)],
+                    "itemHeight": 54
+                    }
+                    </convert>
+                </widget>
+        
             </screen>"""
             
+        if screenwidth.width() <= 1280:
+            skin = """
+                <screen name="JediCatchup" position="center,center" size="400,400" >
+                    <widget source="newlist" render="Listbox" position="0,0" size="400,336" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1">
+                        <convert type="TemplatedMultiContent">
+                            {"template": [
+                                MultiContentEntryText(pos = (10, 0), size = (380, 30), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+                            ],
+                        "fonts": [gFont("jediregular", 24)],
+                        "itemHeight": 36
+                        }
+                        </convert>
+                    </widget>
+                </screen>"""
+        
+        
+
         Screen.__init__(self, session)
         self.session = session
 
@@ -153,23 +191,20 @@ class JediMakerXtream_Catchup(Screen):
         
         self.currentSelection = 0
         
-        self['list'] = MenuList(self.list)
         
-
+        self["newlist"] = List(self.list)
+        
         self['setupActions'] = ActionMap(['SetupActions'], 
-        {
-         'ok': self.openSelected,
-         'cancel': self.quit,
-         'menu': self.quit,
-         'up': self['list'].up,
-         'down': self['list'].down,
-         'right': self['list'].pageDown,
-         'left': self['list'].pageUp}, -2)
+            {
+            'ok': self.openSelected,
+            'cancel': self.quit,
+            'menu': self.quit,
+            }, -2)
 
-        
+
         self.setup_title = ""
         self.createSetup()
-        self['list'].onSelectionChanged.append(self.getCurrentEntry)
+        self['newlist'].onSelectionChanged.append(self.getCurrentEntry)
         self.onLayoutFinish.append(self.__layoutFinished)
 
         
@@ -178,7 +213,7 @@ class JediMakerXtream_Catchup(Screen):
    
       
     def getCurrentEntry(self):
-        self.currentSelection = self['list'].getSelectionIndex()
+        self.currentSelection = self['newlist'].getIndex()
         
         
     def quit(self):
@@ -186,7 +221,7 @@ class JediMakerXtream_Catchup(Screen):
 
 
     def openSelected(self):
-        self.returnValue = self['list'].getCurrent()[1]
+        self.returnValue = self['newlist'].getCurrent()[1]
         if self.returnValue is not None:
             self.getSelectedDateData()
         return      
@@ -195,12 +230,12 @@ class JediMakerXtream_Catchup(Screen):
     def createSetup(self):
         self.list = []      
         
-        self.setup_title = _('%s' % jglob.name.lstrip(cfg.catchupprefix.value))
+        self.setup_title = '%s' % jglob.name.lstrip(cfg.catchupprefix.value)
         for date in jglob.dates:
             self.list.append((str(date[0]),str(date[1])))
             
-        self['list'].list = self.list   
-        self['list'].l.setList(self.list)
+        self['newlist'].list = self.list   
+        self['newlist'].setList(self.list)
         
         
     def getSelectedDateData(self):
@@ -221,31 +256,6 @@ class JediMakerXtream_Catchup(Screen):
         self.session.open(JediMakerXtream_Catchup_Listings, selectedArchive)
 
 
-def CatchupEntryComponent(index, date, time, title, description, start, duration):
-    res = [index]
-    
-    if screenwidth.width() > 1280:
-        res.append(MultiContentEntryText(pos=(24, 0), size=(214, 56), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=date))
-        res.append(MultiContentEntryText(pos=(240, 0), size=(240, 56), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=time))
-        res.append(MultiContentEntryText(pos=(480, 0), size=(828, 56), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=title))
-    else:
-        res.append(MultiContentEntryText(pos=(16, 0), size=(142, 37), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=date))
-        res.append(MultiContentEntryText(pos=(160, 0), size=(160, 37), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=time))
-        res.append(MultiContentEntryText(pos=(320, 0), size=(552, 37), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=title))
-    return res
-
-
-class Catchup_Menu(MenuList):
-    
-    def __init__(self, list):
-        MenuList.__init__(self, list, True, eListboxPythonMultiContent)
-        if screenwidth.width() > 1280:
-            self.l.setFont(0, gFont('jediregular', 36))
-            self.l.setItemHeight(56)
-        else:
-            self.l.setFont(0, gFont('jediregular', 24))
-            self.l.setItemHeight(37)
-        
         
 class JediMakerXtream_Catchup_Listings(Screen):
     def __init__(self, session, archive):
@@ -253,7 +263,7 @@ class JediMakerXtream_Catchup_Listings(Screen):
         Screen.__init__(self, session)
         self.session = session
         
-        skin = skin_path + 'jmx_channels.xml'
+        skin = skin_path + 'jmx_catchup.xml'
         with open(skin, 'r') as f:
             self.skin = f.read()
             
@@ -262,17 +272,14 @@ class JediMakerXtream_Catchup_Listings(Screen):
         
         self.list = []
         self.catchup_all = []
-        self['list'] = Catchup_Menu(self.list)
+        self['list'] = List(self.list)
         self['description'] = Label('')
         self['actions'] = ActionMap(['SetupActions'], {
         
          'ok': self.play,
          'cancel': self.quit,
          'menu': self.quit,
-         'up': self['list'].up,
-         'down': self['list'].down,
-         'right': self['list'].pageDown,
-         'left': self['list'].pageUp}, -2)
+        }, -2)
          
         self['key_red'] = StaticText(_('Close'))
         self.getlistings()
@@ -325,21 +332,25 @@ class JediMakerXtream_Catchup_Listings(Screen):
                 cu_description = base64.b64decode(listing['description'])
                 
             self.catchup_all.append([self.index, str(cu_date_all), str(cu_time_all), str(cu_title), str(cu_description), str(cu_play_start), str(cu_duration) ])
+         
             self.index += 1
                 
-            
         self.createSetup()
+
            
-           
+
     def createSetup(self):
         self.list = []
         
-        for listing in  self.catchup_all:
-                self.list.append(CatchupEntryComponent(str(listing[0]), str(listing[1]), str(listing[2]), str(listing[3]), str(listing[4]), str(listing[5]), str(listing[6]) ))
+        for listing in self.catchup_all:
+                self.list.append((str(listing[0]), str(listing[1]), str(listing[2]), str(listing[3]), str(listing[4]), str(listing[5]), str(listing[6]) ))
+        
+        self['list'].list = self.list 
+        self['list'].setList(self.list)
         
         if self.list != []:
             self['list'].onSelectionChanged.append(self.getCurrentEntry)
-        self['list'].l.setList(self.list)
+
             
             
     def play(self):
@@ -347,12 +358,11 @@ class JediMakerXtream_Catchup_Listings(Screen):
         streamtype  = jglob.currentref.type
         if streamtype == 1:
             streamtype = 4097
-        print "playing catchup channel"
         sref = eServiceReference(streamtype, 0, playurl)
         sref.setName(self.catchup_all[self.currentSelection][3])
         self.session.open(MoviePlayer, sref)
 
         
     def getCurrentEntry(self):
-        self.currentSelection = self['list'].getSelectionIndex()
+        self.currentSelection = self['list'].getIndex()
         self['description'].setText(self.catchup_all[self.currentSelection][4])
