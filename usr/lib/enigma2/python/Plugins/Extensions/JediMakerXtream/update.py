@@ -115,11 +115,14 @@ class JediMakerXtream_Update(Screen):
 		
 		 
 	def start(self):
-		self.nextjob(_('Downloading Rytec UK EPG data...'),self.downloadrytec)
+		if jglob.epg_rytec_uk:
+			self.nextjob(_('Downloading Rytec UK EPG data...'),self.downloadrytec)
+		else:
+			self.nextjob(_('Starting Update...'),self.loopPlaylists)
 				
 
 	def downloadrytec(self):
-		self.rytec_ref, self.epg_alias_names, self.rytec_allrefs  = downloads.downloadrytec()
+		self.rytec_ref, self.epg_alias_names = downloads.downloadrytec()
 		self.nextjob(_('Starting Update...'),self.loopPlaylists)
 		
 	
@@ -213,7 +216,7 @@ class JediMakerXtream_Update(Screen):
 		
 		try:
 			response = urllib2.urlopen(req)
-			self.Valid = True
+			self.valid = True
 		except urllib2.URLError as e:
 			print(e)
 			pass
@@ -233,6 +236,7 @@ class JediMakerXtream_Update(Screen):
 		except ValueError as e:
 			self.valid = False
 			print(e)
+			pass
 		except:
 			self.valid = False
 			pass
@@ -269,6 +273,7 @@ class JediMakerXtream_Update(Screen):
 				except:
 					self.timer3.callback.append(self.downloadSeries)
 				
+				
 	def checkpanelactive(self):
 		response = None
 		self.valid = False
@@ -276,7 +281,7 @@ class JediMakerXtream_Update(Screen):
 		
 		try:
 			response = urllib2.urlopen(req)
-			self.Valid = True
+			self.valid = True
 		except urllib2.URLError as e:
 			print(e)
 			pass
@@ -296,41 +301,13 @@ class JediMakerXtream_Update(Screen):
 		except ValueError as e:
 			self.valid = False
 			print(e)
+			pass
 		except:
 			self.valid = False
 			pass
 			
 		if self.valid:
-			self.getPanelData()
-			if jglob.live:
-			
-				self['action'].setText('Building Live data')
-				self.timer4 = eTimer()
-				self.timer4.start(self.pause, 1)
-				try: 
-					self.timer4_conn = self.timer4.timeout.connect(self.getLive)
-				except:
-					self.timer4.callback.append(self.getLive)
-				
-			if jglob.vod:
-			
-				self['action'].setText('Building VOD data')
-				self.timer5 = eTimer()
-				self.timer5.start(self.pause, 1)
-				try: 
-					self.timer5_conn = self.timer5.timeout.connect(self.getVod)
-				except:
-					self.timer5.callback.append(self.getVod)
-					
-			if jglob.series:
-			
-				self['action'].setText('Building Series data')
-				self.timer6 = eTimer()
-				self.timer6.start(self.pause, 1)
-				try:
-					self.timer6_conn = self.timer6.timeout.connect(self.getSeries)
-				except:
-					self.timer6.callback.append(self.getSeries)
+			self.nextjob(_('%s - Getting categories...') % str(jglob.name),self.getcategories)
 				
 
 		   
@@ -342,24 +319,22 @@ class JediMakerXtream_Update(Screen):
 		elif jglob.series:
 			self.nextjob(_('%s - Downloading Series data...') % str(jglob.name),self.downloadSeries)
 		else:
-			self.nextjob(_('%s - Check empty categories...') % str(jglob.name),self.checkcategories)
-				
+			self.nextjob(_('%s - Getting categories...') % str(jglob.name),self.getcategories)
 
+				
 	def downloadVod(self):
 		downloads.downloadvodcategories(self.VodCategoriesUrl)
 		downloads.downloadvodstreams(self.VodStreamsUrl)
 		if jglob.series:
 			self.nextjob(_('%s - Downloading Series data...') % str(jglob.name),self.downloadSeries)
 		else:
-			self.nextjob(_('%s - Check empty categories...') % str(jglob.name),self.checkcategories)
+			self.nextjob(_('%s - Getting categories...') % str(jglob.name),self.getcategories)
 				
 				
 	def downloadSeries(self):
 		downloads.downloadseriescategories(self.SeriesCategoriesUrl)
 		downloads.downloadseriesstreams(self.SeriesUrl)
-		self.nextjob(_('%s - Check empty categories...') % str(jglob.name),self.checkcategories)
-		
-		
+		self.nextjob(_('%s - Getting categories...') % str(jglob.name),self.getcategories)
 		
 		
 	def getPanelData(self):
@@ -369,6 +344,15 @@ class JediMakerXtream_Update(Screen):
 		
 		valid = False
 		
+		# panel type 1 
+		if jglob.live:
+			downloads.getpanellive(self.active)
+		if jglob.vod:
+			downloads.getpanelvod(self.active)
+		if jglob.series:
+			downloads.getpanelseries(self.active)
+		
+		# panel type 2
 		if 'categories' in self.active:
 			if 'live' in self.active['categories']:
 				jglob.haslive = True
@@ -379,18 +363,14 @@ class JediMakerXtream_Update(Screen):
 					print("\n ***** download live category error *****")
 					jglob.haslive = False
 				
-		
 				if valid:	
 					
 					if jglob.livecategories == [] or 'user_info' in jglob.livecategories or 'category_id' not in jglob.livecategories[0]:
 						jglob.haslive = False
 						jglob.livecategories == []
-						
-					if jglob.livecategories != []:
-						jglob.livecategories.append({'category_id':'0','category_name':'Live Not Categorised','parent_id':0})
 					
-					if not jglob.haslive or jglob.livecategories == []:
-						jglob.live = False
+					if jglob.haslive == False or jglob.livecategories == []:
+						jglob.live = False		
 						
 			
 			if 'movie' in self.active['categories']:
@@ -409,10 +389,7 @@ class JediMakerXtream_Update(Screen):
 						jglob.hasvod = False
 						jglob.vodcategories == []
 						
-					if jglob.vodcategories != []:
-						jglob.vodcategories.append({'category_id':'0','category_name':'VOD Not Categorised','parent_id':0})
-					
-					if not jglob.hasvod or jglob.vodcategories == []:
+					if jglob.hasvod == False or jglob.vodcategories == []:
 						jglob.vod = False
 			
 			
@@ -432,50 +409,28 @@ class JediMakerXtream_Update(Screen):
 						jglob.hasseries = False
 						jglob.seriescategories == []
 						
-					if jglob.seriescategories != []:
-						jglob.seriescategories.append({'category_id':'0','category_name':'Series Not Categorised','parent_id':0})
-					
-					if not jglob.hasseries or jglob.seriescategories == []:
+					if jglob.hasseries == False or jglob.seriescategories == []:
 						jglob.series = False	
-	
-	def getLive(self):	
-		downloads.getlivestreams(self.active)
-		if jglob.vod:
-			self.nextjob(_('%s - Building VOD data...') % str(jglob.name),self.getVod)
-		elif jglob.series:
-			self.nextjob(_('%s - Building Series data...') % str(jglob.name),self.getSeries)
-		else:
-			self.nextjob(_('%s - Check empty categories...') % str(jglob.name),self.checkcategories)
-				
 
-	def getVod(self):
-		downloads.getvodstreams(self.active)
-		if jglob.series:
-			self.nextjob(_('%s - Downloading Series data...') % str(jglob.name),self.getSeries)
-		else:
-			self.nextjob(_('%s - Check empty categories...') % str(jglob.name),self.checkcategories)
-				
-				
-	def getSeries(self):
-		downloads.getseriesstreams(self.active)
-		self.nextjob(_('%s - Check empty categories...') % str(jglob.name),self.checkcategories)	
 		
-		   
-
 	def getM3uCategories(self):
 		# make jglob.getm3ustreams in format (grouptitle, epg_name, source, type)
 		downloads.getM3uCategories(jglob.live, jglob.vod)
 		self.nextjob(_('%s - Get selected categories...') % str(jglob.name),self.getSelected)
-			
+		
+		
+	def getcategories(self):
+		jglob.categories = []
+		
+		if self.playlisttype == 'panel':
+			self.getPanelData()
+		jfunc.getcategories()
+		self.nextjob(_('%s - Getting selection list') % str(jglob.name),self.ignoredcategories)		
 	
-	def checkcategories(self):
-		jfunc.checkcategories(jglob.live ,jglob.vod, jglob.series)
-		self.nextjob(_('%s - Get ignored categories...') % str(jglob.name),self.ignoredcategories)
-		
-		
+	
 	def ignoredcategories(self):
 		if 'bouquet_info' in jglob.current_playlist and jglob.current_playlist['bouquet_info'] != {}:
-			jfunc.IgnoredCategories(jglob.live, jglob.vod, jglob.series)
+			jfunc.IgnoredCategories()
 		self.nextjob(_('%s - Get selected categories...') % str(jglob.name),self.getSelected)
 		
 
@@ -540,7 +495,7 @@ class JediMakerXtream_Update(Screen):
 		category_type = self.categories[self.category_num][1]
 		category_id = self.categories[self.category_num][2]
 		self.protocol = self.protocol.replace(':', '%3a')
-		self.epg_name_list = jfunc.process_category(category_name, category_type, category_id, self.domain, self.port, self.username, self.password, self.protocol, self.output, jglob.current_playlist, self.epg_alias_names, self.epg_name_list, self.rytec_ref, self.m3uValues, self.rytec_allrefs)
+		self.epg_name_list = jfunc.process_category(category_name, category_type, category_id, self.domain, self.port, self.username, self.password, self.protocol, self.output, jglob.current_playlist, self.epg_alias_names, self.epg_name_list, self.rytec_ref, self.m3uValues)
 		self.category_num += 1
 		self.buildBouquets()
 

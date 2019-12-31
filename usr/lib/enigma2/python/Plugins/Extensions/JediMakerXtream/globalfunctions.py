@@ -47,83 +47,63 @@ def resetUnique():
 	  configfile.save()
 	  
 	  
-def checkcategories(live,vod,series):
-	
-	jglob.categories = []
-    
-	if live and jglob.livecategories and jglob.livestreams:
+def getcategories():
+
+	if jglob.live:
 		for c in range(len(jglob.livecategories)):
-			for s in range(len(jglob.livestreams)):
-				if 'category_id' in jglob.livecategories[c] and 'category_id' in jglob.livestreams[s]:
-					if jglob.livecategories[c]['category_id'] == jglob.livestreams[s]['category_id']:
-						categoryValues = [str(jglob.livecategories[c]['category_name']), 'Live', int(jglob.livecategories[c]['category_id']), True]
-						jglob.categories.append(categoryValues)
-						break
-					
-
-	if vod and jglob.vodcategories and jglob.vodstreams:	
+			categoryValues = [str(jglob.livecategories[c]['category_name']), 'Live', int(jglob.livecategories[c]['category_id']), True]
+			jglob.categories.append(categoryValues)
+	if jglob.vod:
 		for c in range(len(jglob.vodcategories)):
-			for s in range(len(jglob.vodstreams)):
-				if 'category_id' in jglob.vodcategories[c] and 'category_id' in jglob.vodstreams[s]:
-					if jglob.vodcategories[c]['category_id'] == jglob.vodstreams[s]['category_id']:
-						categoryValues = [str(jglob.vodcategories[c]['category_name']), 'VOD', int(jglob.vodcategories[c]['category_id']), True]
-						jglob.categories.append(categoryValues)
-						break
-
-	if series and jglob.seriescategories and jglob.seriesstreams:
-    
-
+			categoryValues = [str(jglob.vodcategories[c]['category_name']), 'VOD', int(jglob.vodcategories[c]['category_id']), True]
+			jglob.categories.append(categoryValues)
+	if jglob.series:
 		for c in range(len(jglob.seriescategories)):
-			for s in range(len(jglob.seriesstreams)):
-				if 'category_id' in jglob.seriescategories[c] and 'category_id' in jglob.seriesstreams[s]:
-					if jglob.seriescategories[c]['category_id'] == jglob.seriesstreams[s]['category_id']:
-						categoryValues = [str(jglob.seriescategories[c]['category_name']), 'Series', int(jglob.seriescategories[c]['category_id']), True]
-						jglob.categories.append(categoryValues)
-						break
-		 
-						
-def SelectedCategories(live, vod, series):
+			categoryValues = [str(jglob.seriescategories[c]['category_name']), 'Series', int(jglob.seriescategories[c]['category_id']), True]
+			jglob.categories.append(categoryValues)
+			
+									
+def SelectedCategories():
 
 		for x in jglob.categories:
 			ignore = False
-			if live:
+			if jglob.live:
 				for name in jglob.current_playlist['bouquet_info']['selected_live_categories']:
 					if x[0] == name and x[1] == 'Live':
 						x[3] = True
 						break
 						
-			if vod:
+			if jglob.vod:
 				for name in jglob.current_playlist['bouquet_info']['selected_vod_categories']:
 					if x[0] == name and x[1] == 'VOD':
 						x[3] = True
 						break
 	
-			if series:
+			if jglob.series:
 				for name in jglob.current_playlist['bouquet_info']['selected_series_categories']:
 					if x[0] == name and x[1] == 'Series':
 						x[3] = True
 
 
-
-def IgnoredCategories(live, vod, series):    
+def IgnoredCategories():    
 		
 		for x in jglob.categories:
 			ignore = False
-			if live:
+			if jglob.live:
 				for name in jglob.current_playlist['bouquet_info']['ignored_live_categories']:
 					if x[0] == name and x[1] == 'Live':
 						x[3] = False
 						ignore = True
 						break
 						
-			if vod:
+			if jglob.vod:
 				for name in jglob.current_playlist['bouquet_info']['ignored_vod_categories']:
 					if x[0] == name and x[1] == 'VOD':
 						x[3] = False
 						ignore = True
 						break
 	
-			if series:
+			if jglob.series:
 				for name in jglob.current_playlist['bouquet_info']['ignored_series_categories']:
 					if x[0] == name and x[1] == 'Series':
 						x[3] = False
@@ -133,9 +113,7 @@ def IgnoredCategories(live, vod, series):
 				x[3] = True
 				
 
-
 def readbouquetdata():
-	
 	jglob.live = False
 	jglob.vod = False
 	jglob.series = False
@@ -178,9 +156,7 @@ def readbouquetdata():
 		 jglob.series = True
  
 
-	
 def deleteBouquets():
-
 	cleanName = re.sub(r'[\<\>\:\"\/\\\|\?\*]', '_', str(jglob.name))
 	cleanName = re.sub(r' ', '_', cleanName)
 	cleanName = re.sub(r'_+', '_', cleanName)
@@ -224,15 +200,11 @@ def deleteBouquets():
 		
 	purge('/etc/enigma2', str(cleanName) + str('.tv')) 
 	purge('/etc/enigma2', str(cleanNameOld) + str('.tv')) 
-		
 
-	
-
-		
 	refreshBouquets()
 
 
-def process_category(category_name, category_type, category_id, domain, port, username, password, protocol, output, bouquet, epg_alias_names, epg_name_list, rytec_ref, m3uValues, rytec_allrefs):
+def process_category(category_name, category_type, category_id, domain, port, username, password, protocol, output, bouquet, epg_alias_names, epg_name_list, rytec_ref, m3uValues):
 	streamvaluesgroup = []
 	streamvalues = []
 	
@@ -295,20 +267,6 @@ def process_category(category_name, category_type, category_id, domain, port, us
 		for i in range(len(streamvaluesgroup)):
 
 			epgid = False
-
-			##################################### new code #####################################################
-			
-			"""
-			if 'epg_channel_id' in streamvaluesgroup[i]:
-				for ref in rytec_allrefs:
-					hasref = False
-					
-					if streamvaluesgroup[i]['epg_channel_id'] in rytec_allrefs[ref]:
-						hasref = True
-						custom_sid = rytec_allrefs[ref][0][:-2] + str(jglob.livebuffer) + str(':')
-						#print(streamvaluesgroup[i]['epg_channel_id'])
-						#print(custom_sid)
-						"""
 
 			if bouquet['bouquet_info']['epg_force_rytec_uk'] == True \
 			or any (s in category_name.lower() for s in ('uk', 'u.k', 'united kingdon', 'gb', 'bt sport', 'sky sports', 'manchester', 'mufc', 'mutv')) \
@@ -502,7 +460,10 @@ def process_category(category_name, category_type, category_id, domain, port, us
 			streamvaluesgroup[i]['name'] = streamvaluesgroup[i]['name'].replace('"', "")
 			
 			stream_id = streamvaluesgroup[i]['stream_id']
-			catchup = streamvaluesgroup[i]['tv_archive']
+			if 'tv_archive' in streamvaluesgroup[i]:
+				catchup = streamvaluesgroup[i]['tv_archive']
+			else:
+				catchup = 0
 			calc_remainder = int(stream_id) / 65535
 			bouquet_id_sid = jglob.bouquet_id + calc_remainder	
 			stream_id_sid = int(stream_id) - (calc_remainder * 65535)
