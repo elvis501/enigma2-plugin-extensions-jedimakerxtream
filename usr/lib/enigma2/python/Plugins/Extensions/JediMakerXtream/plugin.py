@@ -4,25 +4,25 @@
 # for localized messages  	 
 from . import _
 
-from Components.config import *
-#from enigma import getDesktop, addFont, eTimer
-
+from Components.ActionMap import HelpableActionMap
+from Components.config import config, ConfigSelection, ConfigNumber, ConfigYesNo, ConfigEnableDisable, ConfigClock, ConfigDirectory, ConfigSubsection
+from enigma import eTimer, eServiceReference, getDesktop, addFont
 from Plugins.Plugin import PluginDescriptor
+from Screens.EpgSelection import EPGSelection
+
+vixEPG = False
+
+try:
+	from Screens.EpgSelectionGrid import EPGSelectionGrid
+	vixEPG = True
+except:
+	pass
+	
+from Screens.MessageBox import MessageBox
+from ServiceReference import ServiceReference
 
 import os
-import socket
 import jediglobals as jglob
-
-from Components.ActionMap import ActionMap, NumberActionMap, HelpableActionMap
-from Components.Label import Label
-from enigma import eConsoleAppContainer, eListboxPythonMultiContent, eTimer, eEPGCache, eServiceReference, getDesktop, gFont, loadPic, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_WRAP, addFont, iServiceInformation, iPlayableService
-from Screens.EpgSelection import EPGSelection
-from Screens.ChannelSelection import *
-from Screens.MessageBox import MessageBox
-from Screens.Screen import Screen
-
-from ServiceReference import ServiceReference
-from Components.ServiceList import ServiceList
 
 
 autoStartTimer = None
@@ -69,11 +69,8 @@ sat28_file = '/etc/enigma2/jediplaylists/28.2e.txt'
 
 
 hdr = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
-		 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' }
-
-#Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
-#Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
-
+		 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+		 'Accept-Encoding': 'deflate' }
 
 
 if not os.path.exists('/etc/enigma2/jediplaylists/'):
@@ -120,7 +117,6 @@ def extensionsmenu(session, **kwargs):
 	
 
 class AutoStartTimer:
-	
 	def __init__(self, session):
 		self.session = session
 		self.timer = eTimer() 
@@ -189,28 +185,44 @@ class AutoStartTimer:
 
 
 def autostart(reason, session = None, **kwargs):
-	
 	if session is not None:
 		global jediEPGSelection__init__
-		
 		jediEPGSelection__init__ = EPGSelection.__init__
 		
-		try:
-			check = EPGSelection.setPiPService
-			EPGSelection.__init__ = EPGSelectionVTi__init__
-		except AttributeError:
+		if vixEPG:
+			global jediEPGSelectionGrid__init__
+			jediEPGSelectionGrid__init__ = EPGSelectionGrid.__init__
+			
 			try:
-				check = EPGSelection.togglePIG
-				EPGSelection.__init__ = EPGSelectionATV__init__
+				check = EPGSelectionGrid.togglePIG
+				EPGSelectionGrid.__init__ = EPGSelectionVIX__init__
+				EPGSelectionGrid.showJediCatchup = showJediCatchup
+				EPGSelectionGrid.playOriginalChannel = playOriginalChannel
 			except AttributeError:
+				print "******** VIX check failed *****"
+				pass
+		else:		
+			try:
+				check = EPGSelection.setPiPService
+				EPGSelection.__init__ = EPGSelectionVTi__init__
+			except AttributeError:
+				print "******** VTI check failed *****"
 				try:
-					check = EPGSelection.runPlugin
-					EPGSelection.__init__ = EPGSelectionPLI__init__
+					check = EPGSelection.togglePIG
+					EPGSelection.__init__ = EPGSelectionATV__init__
 				except AttributeError:
-					EPGSelection.__init__ = EPGSelection__init__
+					print "******** ATV check failed *****"
+					try:
+						check = EPGSelection.runPlugin
+						EPGSelection.__init__ = EPGSelectionPLI__init__
+					except AttributeError:
+						print "******** PLI check failed *****"	
+						EPGSelection.__init__ = EPGSelection__init__
 
-		EPGSelection.showJediCatchup = showJediCatchup
-		EPGSelection.playOriginalChannel = playOriginalChannel
+			EPGSelection.showJediCatchup = showJediCatchup
+			EPGSelection.playOriginalChannel = playOriginalChannel
+		
+
 
 	global autoStartTimer
 	if reason == 0:
@@ -219,12 +231,9 @@ def autostart(reason, session = None, **kwargs):
 				autoStartTimer = AutoStartTimer(session)
 	return
 	
-
 			
 def EPGSelection__init__(self, session, service, zapFunc = None, eventid = None, bouquetChangeCB = None, serviceChangeCB = None):
-	
 	print("**** EPGSelection ****")
-	
 	jediEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB)
 	self['jediCatchupAction'] = HelpableActionMap(self, "JediCatchupActions", {
 	'catchup': self.showJediCatchup,
@@ -233,9 +242,7 @@ def EPGSelection__init__(self, session, service, zapFunc = None, eventid = None,
 	
 
 def EPGSelectionVTi__init__(self, session, service, zapFunc = None, eventid = None, bouquetChangeCB = None, serviceChangeCB = None, isEPGBar = None, switchBouquet = None, EPGNumberZap = None, togglePiP = None):
-	
 	print("**** EPGSelectionVTi ****")
-		
 	jediEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, isEPGBar, switchBouquet, EPGNumberZap, togglePiP)
 	self['jediCatchupAction'] = HelpableActionMap(self, "JediCatchupActions", {
 	'catchup': self.showJediCatchup,
@@ -243,56 +250,43 @@ def EPGSelectionVTi__init__(self, session, service, zapFunc = None, eventid = No
 
 
 def EPGSelectionATV__init__(self, session, service = None, zapFunc = None, eventid = None, bouquetChangeCB = None, serviceChangeCB = None, EPGtype = None, StartBouquet = None, StartRef = None, bouquets = None):
-
 	print("**** EPGSelectionATV ****")
-		
 	jediEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, EPGtype, StartBouquet, StartRef, bouquets)
 	if EPGtype != "vertical":
 		self['jediCatchupAction'] = HelpableActionMap(self, "JediCatchupActions", {
 		 'catchup': self.showJediCatchup,
 		})
+		
+def EPGSelectionVIX__init__(self, session, zapFunc, startBouquet, startRef, bouquets, timeFocus=None, isInfobar=False):	
+	print("**** EPGSelectionVIX ****")
+	jediEPGSelectionGrid__init__(self, session, zapFunc, startBouquet, startRef, bouquets, timeFocus, isInfobar)
+	self['jediCatchupAction'] = HelpableActionMap(self, "JediCatchupActions", {
+	'catchup': self.showJediCatchup,
+	})
 
 
 def EPGSelectionPLI__init__(self, session, service = None, zapFunc = None, eventid = None, bouquetChangeCB = None, serviceChangeCB = None, parent = None):
-	
 	print("**** EPGSelectionPLI ****")
-		
 	jediEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, parent)
 	self['jediCatchupAction'] = HelpableActionMap(self, "JediCatchupActions", {
 	'catchup': self.showJediCatchup,
 	})
 	
-	
-
 
 def showJediCatchup(self):
 	
 	error_message = ""
 	hascatchup = False
-	
-	# get currently playing channel
-	
-	#print("**** store original channel ****")
+
 	self.oldref = self.session.nav.getCurrentlyPlayingServiceReference()
 	self.oldrefstring = self.oldref.toString()
 
 	listcurrent = self['list'].getCurrent()
-	service_event = listcurrent[0]
 	service_ref = listcurrent[1]
 
 	current_service = service_ref.ref.toString()
-	#print("**** current service %s") % current_service
 
-	eventName = ''
-	if service_event is not None:
-		eventName = service_event.getEventName()
-	
-	
-	# zap to highlighted channel before continuing 
-	
-	#print("**** zap to selected channel ****")
 	if self.oldrefstring != current_service:
-		#print("**** channel differs ****")
 		self.session.nav.playService(eServiceReference(current_service))
 	service = self.session.nav.getCurrentService()
 	
@@ -304,7 +298,10 @@ def showJediCatchup(self):
 	
 	if service.streamed():
 		import catchup
-		error_message, hascatchup = catchup.downloadSimpleData()
+		try:
+			error_message, hascatchup = catchup.downloadSimpleData()
+		except:
+			pass
 		
 		if error_message != "":
 			self.session.open(MessageBox, '%s' % error_message, MessageBox.TYPE_ERROR, timeout=5)
@@ -316,9 +313,7 @@ def showJediCatchup(self):
 
 def playOriginalChannel(self):
 	if self.oldrefstring != jglob.currentrefstring:
-		#print("**** playing original channel ****")
 		self.session.nav.playService(eServiceReference(self.oldrefstring))
-		#print("**** playing original channel success ****")
 	
 
 def Plugins(**kwargs):
